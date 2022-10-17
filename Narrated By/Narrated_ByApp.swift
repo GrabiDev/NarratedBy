@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Narrated_ByApp: App {
+    @StateObject private var fyService = FakeYouService()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(fyService)
         }
     }
 }

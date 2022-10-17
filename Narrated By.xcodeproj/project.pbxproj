@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9AFB03628FDF5090051A21A /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03528FDF5090051A21A /* AudioService.swift */; };
 		C9B34CC228FB653600B69064 /* Narrated_ByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CC128FB653600B69064 /* Narrated_ByApp.swift */; };
 		C9B34CC428FB653600B69064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CC328FB653600B69064 /* ContentView.swift */; };
 		C9B34CC628FB653700B69064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B34CC528FB653700B69064 /* Assets.xcassets */; };
@@ -14,6 +15,13 @@
 		C9B34CD428FB653700B69064 /* Narrated_ByTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CD328FB653700B69064 /* Narrated_ByTests.swift */; };
 		C9B34CDE28FB653700B69064 /* Narrated_ByUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CDD28FB653700B69064 /* Narrated_ByUITests.swift */; };
 		C9B34CE028FB653700B69064 /* Narrated_ByUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CDF28FB653700B69064 /* Narrated_ByUITestsLaunchTests.swift */; };
+		C9B34CED28FC172C00B69064 /* FakeYouService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CEC28FC172C00B69064 /* FakeYouService.swift */; };
+		C9B34CF528FC6E4600B69064 /* FYTtsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CF428FC6E4600B69064 /* FYTtsRequest.swift */; };
+		C9B34CF728FC749700B69064 /* FYVoicesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CF628FC749700B69064 /* FYVoicesDTO.swift */; };
+		C9B34CFB28FC757C00B69064 /* FYVoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CFA28FC757C00B69064 /* FYVoiceModel.swift */; };
+		C9B34D0228FDEB0A00B69064 /* FYTtsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34D0128FDEB0A00B69064 /* FYTtsResponseDTO.swift */; };
+		C9B34D0428FDECF000B69064 /* FYJobDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34D0328FDECF000B69064 /* FYJobDetails.swift */; };
+		C9B34D0628FDED8F00B69064 /* FYJobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34D0528FDED8F00B69064 /* FYJobStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9AFB03528FDF5090051A21A /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		C9B34CBE28FB653600B69064 /* Narrated By.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Narrated By.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B34CC128FB653600B69064 /* Narrated_ByApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Narrated_ByApp.swift; sourceTree = "<group>"; };
 		C9B34CC328FB653600B69064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +54,13 @@
 		C9B34CD928FB653700B69064 /* Narrated ByUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Narrated ByUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B34CDD28FB653700B69064 /* Narrated_ByUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Narrated_ByUITests.swift; sourceTree = "<group>"; };
 		C9B34CDF28FB653700B69064 /* Narrated_ByUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Narrated_ByUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9B34CEC28FC172C00B69064 /* FakeYouService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeYouService.swift; sourceTree = "<group>"; };
+		C9B34CF428FC6E4600B69064 /* FYTtsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYTtsRequest.swift; sourceTree = "<group>"; };
+		C9B34CF628FC749700B69064 /* FYVoicesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYVoicesDTO.swift; sourceTree = "<group>"; };
+		C9B34CFA28FC757C00B69064 /* FYVoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYVoiceModel.swift; sourceTree = "<group>"; };
+		C9B34D0128FDEB0A00B69064 /* FYTtsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYTtsResponseDTO.swift; sourceTree = "<group>"; };
+		C9B34D0328FDECF000B69064 /* FYJobDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobDetails.swift; sourceTree = "<group>"; };
+		C9B34D0528FDED8F00B69064 /* FYJobStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +111,8 @@
 		C9B34CC028FB653600B69064 /* Narrated By */ = {
 			isa = PBXGroup;
 			children = (
+				C9B34CF928FC751900B69064 /* FakeYou */,
+				C9B34CEE28FC231400B69064 /* Services */,
 				C9B34CC128FB653600B69064 /* Narrated_ByApp.swift */,
 				C9B34CC328FB653600B69064 /* ContentView.swift */,
 				C9B34CC528FB653700B69064 /* Assets.xcassets */,
@@ -127,6 +145,28 @@
 				C9B34CDF28FB653700B69064 /* Narrated_ByUITestsLaunchTests.swift */,
 			);
 			path = "Narrated ByUITests";
+			sourceTree = "<group>";
+		};
+		C9B34CEE28FC231400B69064 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9B34CEC28FC172C00B69064 /* FakeYouService.swift */,
+				C9AFB03528FDF5090051A21A /* AudioService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C9B34CF928FC751900B69064 /* FakeYou */ = {
+			isa = PBXGroup;
+			children = (
+				C9B34CF628FC749700B69064 /* FYVoicesDTO.swift */,
+				C9B34CF428FC6E4600B69064 /* FYTtsRequest.swift */,
+				C9B34CFA28FC757C00B69064 /* FYVoiceModel.swift */,
+				C9B34D0128FDEB0A00B69064 /* FYTtsResponseDTO.swift */,
+				C9B34D0328FDECF000B69064 /* FYJobDetails.swift */,
+				C9B34D0528FDED8F00B69064 /* FYJobStatus.swift */,
+			);
+			path = FakeYou;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +299,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AFB03628FDF5090051A21A /* AudioService.swift in Sources */,
+				C9B34CED28FC172C00B69064 /* FakeYouService.swift in Sources */,
 				C9B34CC428FB653600B69064 /* ContentView.swift in Sources */,
+				C9B34D0628FDED8F00B69064 /* FYJobStatus.swift in Sources */,
+				C9B34CFB28FC757C00B69064 /* FYVoiceModel.swift in Sources */,
+				C9B34CF528FC6E4600B69064 /* FYTtsRequest.swift in Sources */,
+				C9B34D0228FDEB0A00B69064 /* FYTtsResponseDTO.swift in Sources */,
+				C9B34D0428FDECF000B69064 /* FYJobDetails.swift in Sources */,
 				C9B34CC228FB653600B69064 /* Narrated_ByApp.swift in Sources */,
+				C9B34CF728FC749700B69064 /* FYVoicesDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
