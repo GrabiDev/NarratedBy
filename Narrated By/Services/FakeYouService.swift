@@ -118,11 +118,13 @@ final class FakeYouService: ObservableObject {
                 if let mimeType = response.mimeType, mimeType == "application/json",
                    let data = data,
                    let jobStatusDTO = try? decoder.decode(FYJobStatusDTO.self, from: data) {
-                       let jobState = jobStatusDTO.state
-                       job.jobStatus = jobState.status
-                    if jobState.status == "complete_success" && jobState.maybePublicBucketWavAudioPath != nil {
-                        job.inferenceURL = URL(string: AUDIO_URL + jobState.maybePublicBucketWavAudioPath!)
+                    DispatchQueue.main.async {
+                        let jobState = jobStatusDTO.state
+                        job.jobStatus = jobState.status
+                        if jobState.status == "complete_success" && jobState.maybePublicBucketWavAudioPath != nil {
+                            job.inferenceURL = URL(string: AUDIO_URL + jobState.maybePublicBucketWavAudioPath!)
                         }
+                    }
                    }
             }
             let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)

@@ -12,7 +12,7 @@ struct PlayInferenceView: View {
     @EnvironmentObject var narrateService: FakeYouService
     
     var body: some View {
-        List {
+        VStack {
             ForEach(narrateService.submittedJobs, id: \.self) {
                 job in InferenceItemView(job: job)
             }
