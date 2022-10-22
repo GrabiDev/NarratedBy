@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C97EAD952904116F0008F51C /* InferenceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EAD942904116F0008F51C /* InferenceItemView.swift */; };
 		C9AFB03628FDF5090051A21A /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03528FDF5090051A21A /* AudioService.swift */; };
+		C9AFB03928FDF8670051A21A /* SubmitTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03828FDF8670051A21A /* SubmitTextView.swift */; };
+		C9AFB03B28FDFB160051A21A /* PlayInferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03A28FDFB160051A21A /* PlayInferenceView.swift */; };
+		C9AFB03D28FDFEBC0051A21A /* FYJobStatusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03C28FDFEBC0051A21A /* FYJobStatusDTO.swift */; };
+		C9AFB03F28FE02B90051A21A /* FYJobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03E28FE02B90051A21A /* FYJobStatus.swift */; };
 		C9B34CC228FB653600B69064 /* Narrated_ByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CC128FB653600B69064 /* Narrated_ByApp.swift */; };
 		C9B34CC428FB653600B69064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CC328FB653600B69064 /* ContentView.swift */; };
 		C9B34CC628FB653700B69064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B34CC528FB653700B69064 /* Assets.xcassets */; };
@@ -21,7 +26,7 @@
 		C9B34CFB28FC757C00B69064 /* FYVoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34CFA28FC757C00B69064 /* FYVoiceModel.swift */; };
 		C9B34D0228FDEB0A00B69064 /* FYTtsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34D0128FDEB0A00B69064 /* FYTtsResponseDTO.swift */; };
 		C9B34D0428FDECF000B69064 /* FYJobDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34D0328FDECF000B69064 /* FYJobDetails.swift */; };
-		C9B34D0628FDED8F00B69064 /* FYJobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34D0528FDED8F00B69064 /* FYJobStatus.swift */; };
+		C9B34D0628FDED8F00B69064 /* FYJobStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34D0528FDED8F00B69064 /* FYJobStatusEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C97EAD942904116F0008F51C /* InferenceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceItemView.swift; sourceTree = "<group>"; };
 		C9AFB03528FDF5090051A21A /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		C9AFB03828FDF8670051A21A /* SubmitTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTextView.swift; sourceTree = "<group>"; };
+		C9AFB03A28FDFB160051A21A /* PlayInferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayInferenceView.swift; sourceTree = "<group>"; };
+		C9AFB03C28FDFEBC0051A21A /* FYJobStatusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobStatusDTO.swift; sourceTree = "<group>"; };
+		C9AFB03E28FE02B90051A21A /* FYJobStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobStatus.swift; sourceTree = "<group>"; };
 		C9B34CBE28FB653600B69064 /* Narrated By.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Narrated By.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B34CC128FB653600B69064 /* Narrated_ByApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Narrated_ByApp.swift; sourceTree = "<group>"; };
 		C9B34CC328FB653600B69064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,7 +70,7 @@
 		C9B34CFA28FC757C00B69064 /* FYVoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYVoiceModel.swift; sourceTree = "<group>"; };
 		C9B34D0128FDEB0A00B69064 /* FYTtsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYTtsResponseDTO.swift; sourceTree = "<group>"; };
 		C9B34D0328FDECF000B69064 /* FYJobDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobDetails.swift; sourceTree = "<group>"; };
-		C9B34D0528FDED8F00B69064 /* FYJobStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobStatus.swift; sourceTree = "<group>"; };
+		C9B34D0528FDED8F00B69064 /* FYJobStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobStatusEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9AFB03728FDF8330051A21A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9AFB03828FDF8670051A21A /* SubmitTextView.swift */,
+				C9AFB03A28FDFB160051A21A /* PlayInferenceView.swift */,
+				C97EAD942904116F0008F51C /* InferenceItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C9B34CB528FB653600B69064 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +131,7 @@
 		C9B34CC028FB653600B69064 /* Narrated By */ = {
 			isa = PBXGroup;
 			children = (
+				C9AFB03728FDF8330051A21A /* Views */,
 				C9B34CF928FC751900B69064 /* FakeYou */,
 				C9B34CEE28FC231400B69064 /* Services */,
 				C9B34CC128FB653600B69064 /* Narrated_ByApp.swift */,
@@ -164,7 +185,9 @@
 				C9B34CFA28FC757C00B69064 /* FYVoiceModel.swift */,
 				C9B34D0128FDEB0A00B69064 /* FYTtsResponseDTO.swift */,
 				C9B34D0328FDECF000B69064 /* FYJobDetails.swift */,
-				C9B34D0528FDED8F00B69064 /* FYJobStatus.swift */,
+				C9B34D0528FDED8F00B69064 /* FYJobStatusEnum.swift */,
+				C9AFB03C28FDFEBC0051A21A /* FYJobStatusDTO.swift */,
+				C9AFB03E28FE02B90051A21A /* FYJobStatus.swift */,
 			);
 			path = FakeYou;
 			sourceTree = "<group>";
@@ -299,15 +322,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AFB03F28FE02B90051A21A /* FYJobStatus.swift in Sources */,
 				C9AFB03628FDF5090051A21A /* AudioService.swift in Sources */,
 				C9B34CED28FC172C00B69064 /* FakeYouService.swift in Sources */,
 				C9B34CC428FB653600B69064 /* ContentView.swift in Sources */,
-				C9B34D0628FDED8F00B69064 /* FYJobStatus.swift in Sources */,
+				C9B34D0628FDED8F00B69064 /* FYJobStatusEnum.swift in Sources */,
 				C9B34CFB28FC757C00B69064 /* FYVoiceModel.swift in Sources */,
+				C97EAD952904116F0008F51C /* InferenceItemView.swift in Sources */,
 				C9B34CF528FC6E4600B69064 /* FYTtsRequest.swift in Sources */,
+				C9AFB03B28FDFB160051A21A /* PlayInferenceView.swift in Sources */,
+				C9AFB03D28FDFEBC0051A21A /* FYJobStatusDTO.swift in Sources */,
 				C9B34D0228FDEB0A00B69064 /* FYTtsResponseDTO.swift in Sources */,
 				C9B34D0428FDECF000B69064 /* FYJobDetails.swift in Sources */,
 				C9B34CC228FB653600B69064 /* Narrated_ByApp.swift in Sources */,
+				C9AFB03928FDF8670051A21A /* SubmitTextView.swift in Sources */,
 				C9B34CF728FC749700B69064 /* FYVoicesDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
