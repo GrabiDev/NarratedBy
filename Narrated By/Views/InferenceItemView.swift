@@ -66,12 +66,14 @@ struct InferenceItemView: View {
     }
     
     private func preparePlayer(url: URL) {
+        // need to set up a session to work on mobile
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(.playback)
         } catch let error as NSError {
             print(error.description)
         }
+        
         audioPlayer = AVPlayer(url: url)
         var times = [NSValue]()
         let timeMark = CMTimeMultiplyByFloat64(audioPlayer.currentItem!.asset.duration, multiplier: 1)
