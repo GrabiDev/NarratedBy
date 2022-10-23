@@ -19,9 +19,9 @@ struct InferenceItemView: View {
             VStack {
                 Text(job.selectedVoice.title)
                 Text(getFirstCharacters(str: job.inferenceText, numberOfCharacters: 150))
-                Text(job.jobStatus)
+                Text(job.jobStatus.description)
             }
-            if job.jobStatus == "complete_success" {
+            if job.jobStatus == .completeSuccess {
                 Button(action: {
                     if audioPlayer == nil {
                         preparePlayer(url: job.inferenceURL!)
@@ -45,6 +45,7 @@ struct InferenceItemView: View {
                 }
             }
         }
+        .frame(height: 70)
     }
     
     private func getFirstCharacters(str: String, numberOfCharacters: Int) -> String {
@@ -58,7 +59,7 @@ struct InferenceItemView: View {
     private func preparePlayer(url: URL) {
         audioPlayer = AVPlayer(url: url)
         var times = [NSValue]()
-        let timeMark = CMTimeMultiplyByFloat64(audioPlayer.currentItem!.asset.duration, multiplier: 0.99)
+        let timeMark = CMTimeMultiplyByFloat64(audioPlayer.currentItem!.asset.duration, multiplier: 1)
         times.append(NSValue(time: timeMark))
         audioPlayer.addBoundaryTimeObserver(forTimes: times, queue: .main) {
             stopAudio()

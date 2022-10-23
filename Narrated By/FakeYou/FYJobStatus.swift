@@ -7,6 +7,6 @@
 
 struct FYJobStatus: Decodable {
     var jobToken: String
-    var status: String
+    var status: FYJobStatusEnum
     var maybePublicBucketWavAudioPath: String?
 }

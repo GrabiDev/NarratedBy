@@ -20,12 +20,12 @@ class FYJobDetails: ObservableObject, Hashable {
     let inferenceJobToken: String
     let inferenceText: String
     let selectedVoice: FYVoiceModel
-    @Published var jobStatus: String
+    @Published var jobStatus: FYJobStatusEnum
     @Published var inferenceURL: URL?
     
-    init(inferenceJobToken: String, inferenceText: String, selectedVoice: FYVoiceModel, jobStatus: String?, inferenceURL: URL?) {
+    init(inferenceJobToken: String, inferenceText: String, selectedVoice: FYVoiceModel, jobStatus: FYJobStatusEnum?, inferenceURL: URL?) {
         if jobStatus == nil {
-            self.jobStatus = "submitted"
+            self.jobStatus = .submitted
         } else {
             self.jobStatus = jobStatus!
         }

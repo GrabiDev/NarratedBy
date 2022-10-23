@@ -51,7 +51,7 @@ final class FakeYouService: ObservableObject {
                 let data = data,
                 let response = try? decoder.decode(FYTtsResponseDTO.self, from: data) {
                 DispatchQueue.main.async {
-                    let jobDetails = FYJobDetails(inferenceJobToken: response.inferenceJobToken, inferenceText: text, selectedVoice: voice, jobStatus: "s", inferenceURL: nil)
+                    let jobDetails = FYJobDetails(inferenceJobToken: response.inferenceJobToken, inferenceText: text, selectedVoice: voice, jobStatus: .submitted, inferenceURL: nil)
                     self.submittedJobs.append(jobDetails)
                 }
             }
@@ -121,7 +121,7 @@ final class FakeYouService: ObservableObject {
                     DispatchQueue.main.async {
                         let jobState = jobStatusDTO.state
                         job.jobStatus = jobState.status
-                        if jobState.status == "complete_success" && jobState.maybePublicBucketWavAudioPath != nil {
+                        if jobState.status == .completeSuccess && jobState.maybePublicBucketWavAudioPath != nil {
                             job.inferenceURL = URL(string: AUDIO_URL + jobState.maybePublicBucketWavAudioPath!)
                         }
                     }
