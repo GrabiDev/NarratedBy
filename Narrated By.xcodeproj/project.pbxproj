@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C97EAD952904116F0008F51C /* InferenceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EAD942904116F0008F51C /* InferenceItemView.swift */; };
-		C9AFB03628FDF5090051A21A /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03528FDF5090051A21A /* AudioService.swift */; };
 		C9AFB03928FDF8670051A21A /* SubmitTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03828FDF8670051A21A /* SubmitTextView.swift */; };
 		C9AFB03B28FDFB160051A21A /* PlayInferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03A28FDFB160051A21A /* PlayInferenceView.swift */; };
 		C9AFB03D28FDFEBC0051A21A /* FYJobStatusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFB03C28FDFEBC0051A21A /* FYJobStatusDTO.swift */; };
@@ -48,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		C97EAD942904116F0008F51C /* InferenceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceItemView.swift; sourceTree = "<group>"; };
-		C9AFB03528FDF5090051A21A /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		C9AFB03828FDF8670051A21A /* SubmitTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTextView.swift; sourceTree = "<group>"; };
 		C9AFB03A28FDFB160051A21A /* PlayInferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayInferenceView.swift; sourceTree = "<group>"; };
 		C9AFB03C28FDFEBC0051A21A /* FYJobStatusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYJobStatusDTO.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				C9B34CEC28FC172C00B69064 /* FakeYouService.swift */,
-				C9AFB03528FDF5090051A21A /* AudioService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -323,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AFB03F28FE02B90051A21A /* FYJobStatus.swift in Sources */,
-				C9AFB03628FDF5090051A21A /* AudioService.swift in Sources */,
 				C9B34CED28FC172C00B69064 /* FakeYouService.swift in Sources */,
 				C9B34CC428FB653600B69064 /* ContentView.swift in Sources */,
 				C9B34D0628FDED8F00B69064 /* FYJobStatusEnum.swift in Sources */,

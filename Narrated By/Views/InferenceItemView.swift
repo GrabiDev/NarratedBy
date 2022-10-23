@@ -38,9 +38,7 @@ struct InferenceItemView: View {
                         .aspectRatio(contentMode: .fit)
                 }
                 Button(action: {
-                    audioPlayer.pause()
-                    audioPlayer.seek(to: CMTime(seconds: .zero, preferredTimescale: 1))
-                    playIcon = "play.circle.fill"
+                    stopAudio()
                 }) {
                     Image(systemName: "stop.circle.fill").resizable()
                         .aspectRatio(contentMode: .fit)
@@ -59,8 +57,17 @@ struct InferenceItemView: View {
     
     private func preparePlayer(url: URL) {
         audioPlayer = AVPlayer(url: url)
-        audioPlayer.addObserver(self, forKeyPath: "timeControlStatus", context: nil) {
-            
+        var times = [NSValue]()
+        let timeMark = CMTimeMultiplyByFloat64(audioPlayer.currentItem!.asset.duration, multiplier: 0.99)
+        times.append(NSValue(time: timeMark))
+        audioPlayer.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+            stopAudio()
         }
+    }
+    
+    private func stopAudio() {
+        audioPlayer.pause()
+        audioPlayer.seek(to: CMTime(seconds: .zero, preferredTimescale: 1))
+        playIcon = "play.circle.fill"
     }
 }
