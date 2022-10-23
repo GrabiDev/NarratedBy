@@ -17,6 +17,6 @@ struct PlayInferenceView: View {
                 job in InferenceItemView(job: job)
             }
         }
-        .frame(minHeight: 300, alignment: .top)
+        .frame(alignment: .top)
     }
 }

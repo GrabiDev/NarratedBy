@@ -15,34 +15,42 @@ struct InferenceItemView: View {
     @State private var playIcon = "play.circle.fill"
 
     var body: some View {
-        HStack {
-            VStack {
-                Text(job.selectedVoice.title)
-                Text(getFirstCharacters(str: job.inferenceText, numberOfCharacters: 150))
-                Image(systemName: getStatusIcon(jobStatus: job.jobStatus)).resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
-            if job.jobStatus == .completeSuccess {
-                Button(action: {
-                    if audioPlayer == nil {
-                        preparePlayer(url: job.inferenceURL!)
-                    }
-                    if audioPlayer.timeControlStatus == .playing {
-                        audioPlayer.pause()
-                        playIcon = "play.circle.fill"
-                    } else {
-                        audioPlayer.play()
-                        playIcon = "pause.circle.fill"
-                    }
-                }) {
-                    Image(systemName: playIcon).resizable()
+        VStack {
+            HStack {
+                VStack {
+                    Text(job.selectedVoice.title)
+                    Text(getFirstCharacters(str: job.inferenceText, numberOfCharacters: 150))
+                }
+                if job.jobStatus != .completeSuccess {
+                    Image(systemName: getStatusIcon(jobStatus: job.jobStatus)).resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                Button(action: {
-                    stopAudio()
-                }) {
-                    Image(systemName: "stop.circle.fill").resizable()
-                        .aspectRatio(contentMode: .fit)
+            }
+            HStack {
+                if job.jobStatus == .completeSuccess {
+                    Button(action: {
+                        if audioPlayer == nil {
+                            preparePlayer(url: job.inferenceURL!)
+                        }
+                        if audioPlayer.timeControlStatus == .playing {
+                            audioPlayer.pause()
+                            playIcon = "play.circle.fill"
+                        } else {
+                            audioPlayer.play()
+                            playIcon = "pause.circle.fill"
+                        }
+                    }) {
+                        Image(systemName: playIcon).resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .frame(height: 30)
+                    Button(action: {
+                        stopAudio()
+                    }) {
+                        Image(systemName: "stop.circle.fill").resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .frame(height: 30)
                 }
             }
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SubmitInferenceView: View {
     @EnvironmentObject var narrateService: FakeYouService
-    @State private var selectedVoice = FYVoiceModel(modelToken: "", title: "")
+    @State private var selectedVoice = FYVoiceModel(modelToken: "TM:rvrhhhzqard1", title: "Sir David Attenborough")
     @State private var textToRead = "Text to read"
     
     var body: some View {
