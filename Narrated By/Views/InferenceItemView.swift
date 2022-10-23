@@ -19,7 +19,8 @@ struct InferenceItemView: View {
             VStack {
                 Text(job.selectedVoice.title)
                 Text(getFirstCharacters(str: job.inferenceText, numberOfCharacters: 150))
-                Text(job.jobStatus.description)
+                Image(systemName: getStatusIcon(jobStatus: job.jobStatus)).resizable()
+                    .aspectRatio(contentMode: .fit)
             }
             if job.jobStatus == .completeSuccess {
                 Button(action: {
@@ -70,5 +71,17 @@ struct InferenceItemView: View {
         audioPlayer.pause()
         audioPlayer.seek(to: CMTime(seconds: .zero, preferredTimescale: 1))
         playIcon = "play.circle.fill"
+    }
+    
+    private func getStatusIcon(jobStatus: FYJobStatusEnum) -> String {
+        switch jobStatus {
+        case .submitted: return "square.and.arrow.up"
+        case .pending: return "hourglass"
+        case .started: return "hourglass"
+        case .completeSuccess: return "checkmark"
+        case .completeFailure: return "exclamationmark.triangle"
+        case .attemptFailed: return "exclamationmark.triangle"
+        case .dead: return "exclamationmark.triangle"
+        }
     }
 }
