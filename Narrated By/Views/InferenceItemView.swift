@@ -43,14 +43,16 @@ struct InferenceItemView: View {
                         Image(systemName: playIcon).resizable()
                             .aspectRatio(contentMode: .fit)
                     }
-                    .frame(height: 30)
+                    .frame(height: 50)
+                    Spacer()
+                        .frame(width: 50)
                     Button(action: {
                         stopAudio()
                     }) {
                         Image(systemName: "stop.circle.fill").resizable()
                             .aspectRatio(contentMode: .fit)
                     }
-                    .frame(height: 30)
+                    .frame(height: 50)
                 }
             }
         }
