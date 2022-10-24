@@ -31,13 +31,8 @@ struct InferenceItemView: View {
                     Button(action: {
                         if audioPlayer == nil {
                             preparePlayer(url: job.inferenceURL!)
-                        }
-                        if audioPlayer.timeControlStatus == .playing {
-                            audioPlayer.pause()
-                            playIcon = "play.circle.fill"
                         } else {
-                            audioPlayer.play()
-                            playIcon = "pause.circle.fill"
+                            playPauseAudio()
                         }
                     }) {
                         Image(systemName: playIcon).resizable()
@@ -69,19 +64,39 @@ struct InferenceItemView: View {
     
     private func preparePlayer(url: URL) {
         // need to set up a session to work on mobile
+        #if os(iOS)
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(.playback)
         } catch let error as NSError {
             print(error.description)
         }
+        #endif
         
-        audioPlayer = AVPlayer(url: url)
-        var times = [NSValue]()
-        let timeMark = CMTimeMultiplyByFloat64(audioPlayer.currentItem!.asset.duration, multiplier: 1)
-        times.append(NSValue(time: timeMark))
-        audioPlayer.addBoundaryTimeObserver(forTimes: times, queue: .main) {
-            stopAudio()
+        Task(priority: .medium) {
+            audioPlayer = AVPlayer(url: url)
+            do {
+                var times = [NSValue]()
+                let duration = try await audioPlayer.currentItem!.asset.load(.duration)
+                let timeMark = CMTimeMultiplyByFloat64(duration, multiplier: 1)
+                times.append(NSValue(time: timeMark))
+                audioPlayer.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+                    stopAudio()
+                }
+                playPauseAudio()
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    private func playPauseAudio() {
+        if audioPlayer.timeControlStatus == .playing {
+            audioPlayer.pause()
+            playIcon = "play.circle.fill"
+        } else {
+            audioPlayer.play()
+            playIcon = "pause.circle.fill"
         }
     }
     
