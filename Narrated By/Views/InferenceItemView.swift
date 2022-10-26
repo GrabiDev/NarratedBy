@@ -13,6 +13,7 @@ struct InferenceItemView: View {
     @ObservedObject var job: FYJobDetails
     @State private var audioPlayer: AVPlayer!
     @State private var playIcon = "play.circle.fill"
+    let narrateService: FakeYouService
 
     var body: some View {
         VStack {
@@ -27,6 +28,12 @@ struct InferenceItemView: View {
                 }
             }
             HStack {
+                Button(action: {
+                    narrateService.submittedJobs.removeAll(where: { filteredJob in filteredJob == job })
+                }) {
+                    Image(systemName: "trash").resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
                 if job.jobStatus == .completeSuccess {
                     Button(action: {
                         if audioPlayer == nil {
@@ -101,7 +108,9 @@ struct InferenceItemView: View {
     }
     
     private func stopAudio() {
-        audioPlayer.pause()
+        if audioPlayer.timeControlStatus == .playing {
+            audioPlayer.pause()
+        }
         audioPlayer.seek(to: CMTime(seconds: .zero, preferredTimescale: 1))
         playIcon = "play.circle.fill"
     }

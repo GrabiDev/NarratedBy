@@ -12,9 +12,9 @@ struct PlayInferenceView: View {
     @EnvironmentObject var narrateService: FakeYouService
     
     var body: some View {
-        GroupBox {
+        VStack {
             ForEach(narrateService.submittedJobs, id: \.self) {
-                job in InferenceItemView(job: job)
+                job in InferenceItemView(job: job, narrateService: narrateService)
             }
         }
         .frame(alignment: .top)

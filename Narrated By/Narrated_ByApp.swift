@@ -13,8 +13,24 @@ struct Narrated_ByApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(fyService)
+            ContentView() {
+                FakeYouService.save(jobDetails: fyService.submittedJobs) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .environmentObject(fyService)
+            .onAppear {
+                FakeYouService.load { result in
+                    switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let submittedJobs):
+                        fyService.submittedJobs = submittedJobs
+                    }
+                }
+            }
         }
     }
 }

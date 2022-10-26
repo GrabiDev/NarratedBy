@@ -60,7 +60,7 @@ final class FakeYouService: ObservableObject {
         task.resume()
     }
     
-    func fetchVoices() {
+    private func fetchVoices() {
         let endpointUrl = URL(string: FAKE_YOU_URL + "list")!
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -90,7 +90,7 @@ final class FakeYouService: ObservableObject {
         task.resume()
     }
     
-    func updateJobStatuses() {
+    private func updateJobStatuses() {
         let AUDIO_URL = "https://storage.googleapis.com/vocodes-public"
         
         let decoder = JSONDecoder()
@@ -132,10 +132,60 @@ final class FakeYouService: ObservableObject {
         }
     }
     
-    func startPolling() {
+    private func startPolling() {
         let timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { timer in
             self.updateJobStatuses()
         }
         timer.fire()
+    }
+    
+    private static func fileURL() throws -> URL {
+        try FileManager.default.url(for: .documentDirectory,
+                                       in: .userDomainMask,
+                                       appropriateFor: nil,
+                                       create: false)
+            .appendingPathComponent("voiceInferences.data")
+    }
+    
+    static func load(completion: @escaping (Result<[FYJobDetails], Error>)->Void) {
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let fileURL = try fileURL()
+                guard let file = try? FileHandle(forReadingFrom: fileURL) else {
+                    DispatchQueue.main.async {
+                        completion(.success([]))
+                    }
+                    return
+                }
+
+                let savedJobs = try JSONDecoder().decode([FYJobDetails].self, from: file.availableData)
+
+                DispatchQueue.main.async {
+                    completion(.success(savedJobs))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    static func save(jobDetails: [FYJobDetails], completion: @escaping (Result<Int, Error>)->Void) {
+
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let data = try JSONEncoder().encode(jobDetails)
+                let outfile = try fileURL()
+                try data.write(to: outfile)
+                DispatchQueue.main.async {
+                    completion(.success(jobDetails.count))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var narrateService: FakeYouService
+    @Environment(\.scenePhase) private var scenePhase
+    let saveAction: () -> Void
     
     var body: some View {
         VStack() {
@@ -36,12 +38,15 @@ struct ContentView: View {
             
         }
         .padding(10.0)
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(saveAction: {})
             .environmentObject(FakeYouService())
     }
 }

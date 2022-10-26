@@ -5,7 +5,7 @@
 //  Created by Mateusz Grabara on 17/10/2022.
 //
 
-enum FYJobStatusEnum: String, Decodable {
+enum FYJobStatusEnum: String, Codable {
     case submitted = "submitted"
     case pending = "pending"
     case started = "started"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FYVoiceModel: Hashable, Identifiable, Decodable {
+struct FYVoiceModel: Hashable, Identifiable, Codable {
     var id: String {modelToken}
     var modelToken: String
     var title: String
