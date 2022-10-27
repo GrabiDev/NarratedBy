@@ -17,15 +17,9 @@ struct InferenceItemView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                VStack {
-                    Text(job.selectedVoice.title)
-                    Text(getFirstCharacters(str: job.inferenceText, numberOfCharacters: 150))
-                }
-                if job.jobStatus != .completeSuccess {
-                    Image(systemName: getStatusIcon(jobStatus: job.jobStatus)).resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
+            VStack {
+                Text(job.selectedVoice.title)
+                Text(getFirstCharacters(str: job.inferenceText, numberOfCharacters: 150))
             }
             HStack {
                 Button(action: {
@@ -34,6 +28,8 @@ struct InferenceItemView: View {
                     Image(systemName: "trash").resizable()
                         .aspectRatio(contentMode: .fit)
                 }
+                .frame(height: 30)
+                Spacer()
                 if job.jobStatus == .completeSuccess {
                     Button(action: {
                         if audioPlayer == nil {
@@ -55,10 +51,17 @@ struct InferenceItemView: View {
                             .aspectRatio(contentMode: .fit)
                     }
                     .frame(height: 50)
+                } else {
+                    Image(systemName: getStatusIcon(jobStatus: job.jobStatus))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30)
+                        .padding(5)
                 }
             }
         }
-        .frame(height: 70)
+        .frame(height: 150)
+        .padding(10)
     }
     
     private func getFirstCharacters(str: String, numberOfCharacters: Int) -> String {

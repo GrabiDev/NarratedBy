@@ -12,11 +12,12 @@ struct PlayInferenceView: View {
     @EnvironmentObject var narrateService: FakeYouService
     
     var body: some View {
-        VStack {
-            ForEach(narrateService.submittedJobs, id: \.self) {
-                job in InferenceItemView(job: job, narrateService: narrateService)
+        ScrollView {
+            VStack(spacing: 20) {
+                ForEach(narrateService.submittedJobs, id: \.self) {
+                    job in InferenceItemView(job: job, narrateService: narrateService)
+                }
             }
         }
-        .frame(alignment: .top)
     }
 }
