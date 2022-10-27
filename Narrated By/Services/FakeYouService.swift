@@ -53,6 +53,11 @@ final class FakeYouService: ObservableObject {
                 DispatchQueue.main.async {
                     let jobDetails = FYJobDetails(inferenceJobToken: response.inferenceJobToken, inferenceText: text, selectedVoice: voice, jobStatus: .submitted, inferenceURL: nil)
                     self.submittedJobs.append(jobDetails)
+                    FakeYouService.save(jobDetails: self.submittedJobs) { result in
+                        if case .failure(let error) = result {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
                 }
             }
         }
@@ -123,6 +128,11 @@ final class FakeYouService: ObservableObject {
                         job.jobStatus = jobState.status
                         if jobState.status == .completeSuccess && jobState.maybePublicBucketWavAudioPath != nil {
                             job.inferenceURL = URL(string: AUDIO_URL + jobState.maybePublicBucketWavAudioPath!)
+                            FakeYouService.save(jobDetails: self.submittedJobs) { result in
+                                if case .failure(let error) = result {
+                                    fatalError(error.localizedDescription)
+                                }
+                            }
                         }
                     }
                    }
