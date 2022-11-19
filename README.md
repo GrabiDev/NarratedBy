@@ -27,7 +27,7 @@ Unfortunately, the CoCoApp name came too late and it was too much effort to chan
 The app compiles as is on macOS Monterey (and probably Ventura too, not tested) and iOS 16.
 
 The app provides the same functionality across platforms.
-History of inferences persist app shutdowns.
+History of inferences persists app shutdowns.
 
 Internet connection is required at all times.
 Links to inferences are saved on the device, but the audio files are read from FakeYou storage.
