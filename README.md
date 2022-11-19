@@ -21,6 +21,8 @@ However to make it a smooth party experience, an easy way to access and generate
 
 This was the push that made this app happen.
 
+Unfortunately, the CoCoApp name came too late and it was too much effort to change the name of the project and repository.
+
 ## Technical information
 The app compiles as is on macOS Monterey (and probably Ventura too, not tested) and iOS 16.
 
